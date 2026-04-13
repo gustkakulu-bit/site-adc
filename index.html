@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assemblées de Dieu de Centrafrique — Site Officiel</title>
+  <meta name="description" content="Site officiel des Assemblées de Dieu de Centrafrique (ADC). Découvrez nos églises, nos départements, nos actualités et notre mission d'annoncer l'Évangile.">
+  <meta name="keywords" content="Assemblées de Dieu, Centrafrique, ADC, Bangui, Évangile, Église, RCA">
+  <meta property="og:title" content="Assemblées de Dieu de Centrafrique">
+  <meta property="og:description" content="Annoncer l'Évangile, former des disciples et implanter des Églises pentecôtistes.">
+  <meta property="og:image" content="images/pente.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRE DE PROGRESSION -->
+  <div id="reading-bar"></div>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button id="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- BOUTON WHATSAPP FLOTTANT -->
+  <a id="whatsapp-btn" href="https://wa.me/23672621699" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- LIGHTBOX COMPLÈTE -->
+  <div id="lightbox-full" class="lightbox-full" role="dialog" aria-modal="true">
+    <button id="lightbox-close-full" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lightbox-prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightbox-img-full" src="" alt="Photo agrandie">
+    <button id="lightbox-next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="logo-box">
+      <img src="images/logo.png" class="logo-loader" alt="Logo ADC">
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-zone">
+      <img src="images/logo.png" alt="Logo Assemblées de Dieu" class="logo">
+      <h1>Assemblées de Dieu de Centrafrique</h1>
+    </div>
+    <div class="header-actions">
+      <button class="dark-toggle" id="dark-toggle" aria-label="Mode sombre">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <div class="menu-toggle" id="hamburger" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></div>
+    </div>
+    <nav aria-label="Navigation principale">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="Bureau-National.html">Bureau National</a>
+      <a href="NosEglises.html">Nos Églises</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" aria-haspopup="true">Nos Départements ▾</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="jeunesse.html" role="menuitem"><i class="fa-solid fa-users fa-fw"></i> Jeunesse</a>
+          <a href="otc.html" role="menuitem"><i class="fa-solid fa-heart fa-fw"></i> OTC</a>
+          <a href="mission.html" role="menuitem"><i class="fa-solid fa-globe fa-fw"></i> Mission</a>
+          <a href="ecodim.html" role="menuitem"><i class="fa-solid fa-child fa-fw"></i> ECODIM</a>
+          <a href="developpement.html" role="menuitem"><i class="fa-solid fa-seedling fa-fw"></i> Développement</a>
+        </div>
+      </div>
+      <a href="ibtadc.html">IBTADC</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- VERSET DÉFILANT -->
+  <div class="marquee-bar" aria-label="Verset du jour">
+    <span class="marquee-inner">
+      ✝ Romains 1:16 — « Car je n'ai point honte de l'Évangile : c'est une puissance de Dieu pour le salut de quiconque croit, du Juif premièrement, puis du Grec. »
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+
+  <!-- SLIDER HERO -->
+  <section class="slider-section" aria-label="Diaporama">
+    <div class="slider-wrapper" id="sliderWrapper">
+      <div class="slide active">
+        <img src="images/pente.jpg" alt="Cérémonie IBTADC">
+        <div class="slide-overlay">
+          <h2>Bienvenue aux Assemblées de Dieu de Centrafrique</h2>
+          <a href="NosEglises.html" class="btn-hero"><i class="fa-solid fa-church"></i> Rejoindre une Église</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/photo2.jpg" alt="Diplômés IBTADC">
+        <div class="slide-overlay">
+          <h2>Bienvenue aux Assemblées de Dieu de Centrafrique</h2>
+          <a href="NosEglises.html" class="btn-hero"><i class="fa-solid fa-church"></i> Rejoindre une Église</a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="images/photo3.jpg" alt="Pentecôte 2025">
+        <div class="slide-overlay">
+          <h2>Bienvenue aux Assemblées de Dieu de Centrafrique</h2>
+          <a href="NosEglises.html" class="btn-hero"><i class="fa-solid fa-church"></i> Rejoindre une Église</a>
+        </div>
+      </div>
+    </div>
+    <button class="slider-prev" onclick="moveSlide(-1)" aria-label="Précédent">&#8249;</button>
+    <button class="slider-next" onclick="moveSlide(1)" aria-label="Suivant">&#8250;</button>
+    <div class="slider-dots">
+      <span class="slider-dot active"></span>
+      <span class="slider-dot"></span>
+      <span class="slider-dot"></span>
+    </div>
+  </section>
+
+  <!-- STATISTIQUES -->
+  <section class="stats-section fade-in">
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-number" data-target="40" data-suffix="+">0+</div>
+        <div class="stat-label"><i class="fa-solid fa-church" style="margin-right:4px;"></i>Églises locales</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number" data-target="8" data-suffix="">0</div>
+        <div class="stat-label"><i class="fa-solid fa-map-location-dot" style="margin-right:4px;"></i>Régions couvertes</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number" data-target="3" data-suffix="">0</div>
+        <div class="stat-label"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i>Promotions IBTADC</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number" data-target="5" data-suffix="">0</div>
+        <div class="stat-label"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i>Départements</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-number" data-target="1984" data-suffix="">0</div>
+        <div class="stat-label"><i class="fa-solid fa-calendar-check" style="margin-right:4px;"></i>Reconnues depuis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALITÉS -->
+  <section class="actu-section-home fade-in">
+    <h2 class="section-title">À la Une</h2>
+    <div class="actu-banner">
+      <div class="actu-banner-img">
+        <img src="images/pentecote.jpg" alt="IBTADC 3ème Promotion">
+        <div class="actu-banner-overlay"></div>
+      </div>
+      <div class="actu-banner-text">
+        <span class="actu-badge">Actualité</span>
+        <h3>IBTADC — 3ème Promotion</h3>
+        <p>Remise des diplômes de la 3ème promotion de l'Institut Biblique et Théologique des Assemblées de Dieu de Centrafrique, le Samedi 27 Février 2026 au Temple Pain de Vie de Gobongo-Enerca.</p>
+        <a href="actualites.html" class="btn-gold"><i class="fa-solid fa-arrow-right"></i> Lire l'article</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGE DU PRÉSIDENT -->
+  <section class="president-section fade-in">
+    <h2 class="section-title">Vœux de Nouvel An 2026</h2>
+    <div class="president-inner">
+      <div class="president-photo-wrap">
+        <img src="images/pres.jpg" alt="Rév. BALLA Maxime Joseph" class="president-photo">
+        <p class="president-caption"><strong>Rév. BALLA Maxime Joseph</strong><br>Président National</p>
+      </div>
+      <div class="president-message">
+        <blockquote>
+          « À toutes nos églises répandues sur le Territoire National, à nos églises sœurs, à nos très chers partenaires et à nos éminents Serviteurs et Servantes de Dieu, je souhaite une bonne et heureuse année 2026. »
+        </blockquote>
+        <p>À l'aube de cette nouvelle année, je renouvelle mon vœu de voir les frères et sœurs, membres de notre communauté, manifester le désir d'être remplis du Saint-Esprit. Le baptême du Saint-Esprit est l'élément catalyseur de la mission et de la moisson des âmes.</p>
+        <p>Une église constituée de membres remplis du Saint-Esprit vivra une croissance spirituelle et numérique exponentielle ! Je prie que le Seigneur Jésus-Christ, le Maître de l'Église, vous comble de toute sorte de bénédiction afin que vous abondiez en bonnes œuvres.</p>
+        <p>Que Dieu bénisse nos églises et bénisse notre Nation, la République Centrafricaine !</p>
+        <p><strong>Révérend BALLA Maxime Joseph</strong><br><em>Président National des Assemblées de Dieu de Centrafrique</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS DÉPARTEMENTS -->
+  <section class="departements-section fade-in">
+    <h2 class="section-title">Nos Départements</h2>
+    <div class="dept-grid">
+      <a href="jeunesse.html" class="dept-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>Jeunesse</h3>
+        <p>Évangélisation et formation des jeunes</p>
+      </a>
+      <a href="otc.html" class="dept-card">
+        <i class="fa-solid fa-heart"></i>
+        <h3>OTC</h3>
+        <p>Ouali Témoin Ti Christ — Département des femmes</p>
+      </a>
+      <a href="mission.html" class="dept-card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>Mission</h3>
+        <p>Évangélisation et implantation d'Églises</p>
+      </a>
+      <a href="ecodim.html" class="dept-card">
+        <i class="fa-solid fa-child"></i>
+        <h3>ECODIM</h3>
+        <p>École du Dimanche — Enfants et jeunesse</p>
+      </a>
+      <a href="developpement.html" class="dept-card">
+        <i class="fa-solid fa-seedling"></i>
+        <h3>Développement</h3>
+        <p>Développement communautaire et social</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- GALERIE APERÇU -->
+  <section class="galerie-section fade-in">
+    <h2 class="section-title">Galerie Photos</h2>
+    <div class="galerie-grid-home">
+      <img src="images/photo1.webp" alt="Moment de prière — ADC" onclick="openLightbox(this.src)">
+      <img src="images/photo5.webp" alt="Serviteurs de Dieu — ADC" onclick="openLightbox(this.src)">
+      <img src="images/photo6.webp" alt="Prédication — ADC" onclick="openLightbox(this.src)">
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <a href="galerie.html" class="btn-primary"><i class="fa-solid fa-images"></i> Voir toute la galerie</a>
+    </div>
+  </section>
+
+  <!-- CARTE -->
+  <section class="carte-section fade-in">
+    <h2 class="section-title">Trouver une Église près de chez vous</h2>
+    <div id="map" aria-label="Carte des Églises ADC"></div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <span class="lightbox-close" id="lightbox-close" aria-label="Fermer">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Assemblées de Dieu de Centrafrique</h3>
+        <p style="display:block; text-align:justify;">Une communauté engagée dans l'annonce de l'Évangile,<br>la formation des disciples et l'implantation des Églises pentecôtistes.</p>
+        <p><i class="fa-solid fa-clock" style="color:var(--gold);margin-right:6px;"></i>Culte : Dimanche 08h30</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/maximejoseph.balla" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/23672621699" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-right:6px;"></i>Cité Jean XXIII Réf. Gobongo-Enerca, Bangui — RCA</p>
+        <p><i class="fa-solid fa-envelope" style="color:var(--gold);margin-right:6px;"></i><a href="mailto:contact@adc.cf">contact@adc.cf</a></p>
+        <p><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:6px;"></i>(+236) 72 62 16 99</p>
+        <p><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:6px;"></i>(+236) 75 71 06 07</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <a href="index.html"><i class="fa-solid fa-house" style="margin-right:6px;"></i>Accueil</a>
+        <a href="apropos.html"><i class="fa-solid fa-circle-info" style="margin-right:6px;"></i>À propos</a>
+        <a href="NosEglises.html"><i class="fa-solid fa-church" style="margin-right:6px;"></i>Nos Églises</a>
+        <a href="Bureau-National.html"><i class="fa-solid fa-users" style="margin-right:6px;"></i>Bureau National</a>
+        <a href="ibtadc.html"><i class="fa-solid fa-book" style="margin-right:6px;"></i>IBTADC</a>
+        <a href="contact.html"><i class="fa-solid fa-paper-plane" style="margin-right:6px;"></i>Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Assemblées de Dieu de Centrafrique — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="adc.js"></script>
+  <script>
+  // ── Loader ──────────────────────────────────────────────────────
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    if (!loader) return;
+    if (sessionStorage.getItem("loaded")) { loader.style.display = "none"; return; }
+    sessionStorage.setItem("loaded", "true");
+    setTimeout(() => { loader.style.opacity = "0"; setTimeout(() => { loader.style.display = "none"; }, 500); }, 500);
+  });
+
+  // ── Hamburger ────────────────────────────────────────────────────
+  (function () {
+    const t = document.querySelector(".menu-toggle"), n = document.querySelector("nav");
+    if (!t || !n) return;
+    t.addEventListener("click", () => n.classList.toggle("active"));
+    t.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") n.classList.toggle("active"); });
+  })();
+
+  // ── Dropdown ─────────────────────────────────────────────────────
+  (function () {
+    const b = document.querySelector(".dropdown-toggle"), m = document.querySelector(".dropdown-menu");
+    if (!b || !m) return;
+    b.addEventListener("click", (e) => { e.preventDefault(); m.classList.toggle("show"); });
+    document.addEventListener("click", (e) => { if (!e.target.closest(".dropdown")) m.classList.remove("show"); });
+  })();
+
+  // ── Slider ───────────────────────────────────────────────────────
+  (function () {
+    const wrapper = document.getElementById("sliderWrapper");
+    if (!wrapper) return;
+    const slides = wrapper.querySelectorAll(".slide");
+    const dots   = document.querySelectorAll(".slider-dot");
+    const prev   = document.querySelector(".slider-prev");
+    const next   = document.querySelector(".slider-next");
+    let current = 0, timer;
+
+    function goTo(n) {
+      slides[current].classList.remove("active");
+      dots[current].classList.remove("active");
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add("active");
+      dots[current].classList.add("active");
+      wrapper.style.transform = "translateX(-" + (current * 100) + "%)";
+    }
+    function autoPlay() { timer = setInterval(() => goTo(current + 1), 5000); }
+    function reset()    { clearInterval(timer); autoPlay(); }
+
+    prev.addEventListener("click", () => { goTo(current - 1); reset(); });
+    next.addEventListener("click", () => { goTo(current + 1); reset(); });
+    dots.forEach((d, i) => d.addEventListener("click", () => { goTo(i); reset(); }));
+
+    // Swipe mobile
+    let startX = 0;
+    wrapper.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    wrapper.addEventListener("touchend",   (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); reset(); }
+    });
+
+    autoPlay();
+  })();
+
+  // ── Lightbox ─────────────────────────────────────────────────────
+  (function () {
+    const lb  = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    const cl  = document.getElementById("lightbox-close");
+    if (!lb) return;
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => { img.src = el.src; img.alt = el.alt; lb.classList.add("open"); document.body.style.overflow = "hidden"; });
+    });
+    function close() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+    cl.addEventListener("click", close);
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  })();
+
+  // ── Fade-in ──────────────────────────────────────────────────────
+  (function () {
+    const els = document.querySelectorAll(".fade-in");
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    els.forEach((el) => obs.observe(el));
+  })();
+
+  // ── Carte Leaflet ────────────────────────────────────────────────
+  (function () {
+    const mapEl = document.getElementById("map");
+    if (!mapEl || typeof L === "undefined") return;
+    const map = L.map("map").setView([4.361, 18.555], 6);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors", maxZoom: 18
+    }).addTo(map);
+    const icon = L.divIcon({ className: "", html: '<div style="background:#0f2d62;border:3px solid #ffd36b;width:14px;height:14px;border-radius:50%;"></div>', iconSize: [14, 14] });
+    const eglises = [
+      { name: "Bangui — Temple Principal",   lat: 4.361,  lng: 18.555, desc: "Siège national des ADC" },
+      { name: "Bimbo",                        lat: 4.255,  lng: 18.411, desc: "Église locale ADC" },
+      { name: "Boali",                        lat: 4.795,  lng: 18.120, desc: "Église locale ADC" },
+      { name: "Mbaïki",                       lat: 3.867,  lng: 18.000, desc: "Église locale ADC" },
+      { name: "Sibut",                        lat: 5.733,  lng: 19.083, desc: "Église locale ADC" },
+      { name: "Bambari",                      lat: 5.767,  lng: 20.667, desc: "Église locale ADC" },
+      { name: "Berbérati",                    lat: 4.267,  lng: 15.783, desc: "Église locale ADC" },
+      { name: "Bouar",                        lat: 5.933,  lng: 15.600, desc: "Église locale ADC" },
+    ];
+    eglises.forEach((e) => {
+      L.marker([e.lat, e.lng], { icon })
+        .addTo(map)
+        .bindPopup(`<strong>${e.name}</strong><br>${e.desc}<br><a href="NosEglises.html" style="color:#0f2d62;font-weight:600;">Voir les détails →</a>`);
+    });
+  })();
+  </script>
+</body>
+</html>

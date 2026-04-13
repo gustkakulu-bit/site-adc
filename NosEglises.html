@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos Églises — Assemblées de Dieu de Centrafrique</title>
+  <meta name="description" content="Trouvez une Église ADC près de chez vous">
+  <meta property="og:title" content="Nos Églises — ADC">
+  <meta property="og:description" content="Trouvez une Église ADC près de chez vous">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- BARRE DE PROGRESSION -->
+  <div id="reading-bar"></div>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+  <button id="back-to-top" aria-label="Retour en haut"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- BOUTON WHATSAPP FLOTTANT -->
+  <a id="whatsapp-btn" href="https://wa.me/23672621699" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true">
+    <button id="lightbox-close" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
+    <button id="lightbox-prev" aria-label="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+    <img id="lightbox-img" src="" alt="Photo agrandie">
+    <button id="lightbox-next" aria-label="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-zone">
+      <img src="images/logo.png" alt="Logo Assemblées de Dieu" class="logo">
+      <h1>Assemblées de Dieu de Centrafrique</h1>
+    </div>
+    <div class="header-actions">
+      <button class="dark-toggle" id="dark-toggle" aria-label="Mode sombre">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <div class="menu-toggle" id="hamburger" aria-label="Ouvrir le menu"><i class="fa-solid fa-bars"></i></div>
+    </div>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="Bureau-National.html">Bureau National</a>
+      <a href="NosEglises.html">Nos Églises</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" aria-haspopup="true">Nos Départements ▾</a>
+        <div class="dropdown-menu" role="menu">
+          <a href="jeunesse.html" role="menuitem"><i class="fa-solid fa-users fa-fw"></i> Jeunesse</a>
+          <a href="otc.html" role="menuitem"><i class="fa-solid fa-heart fa-fw"></i> OTC</a>
+          <a href="mission.html" role="menuitem"><i class="fa-solid fa-globe fa-fw"></i> Mission</a>
+          <a href="ecodim.html" role="menuitem"><i class="fa-solid fa-child fa-fw"></i> ECODIM</a>
+          <a href="developpement.html" role="menuitem"><i class="fa-solid fa-seedling fa-fw"></i> Développement</a>
+        </div>
+      </div>
+      <a href="ibtadc.html">IBTADC</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- VERSET DÉFILANT -->
+  <div class="marquee-bar" aria-label="Verset du jour">
+    <span class="marquee-inner">
+      ✝ Romains 1:16 — « Car je n'ai point honte de l'Évangile : c'est une puissance de Dieu pour le salut de quiconque croit, du Juif premièrement, puis du Grec. »
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+
+
+<div class="page-banner">
+  <h1>Nos Églises</h1>
+  <p>Découvrez nos implantations à travers toute la République Centrafricaine</p>
+</div>
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card fade-in"><div class="stat-number">40+</div><div class="stat-label">Églises implantées</div></div>
+    <div class="stat-card fade-in"><div class="stat-number">8</div><div class="stat-label">Régions couvertes</div></div>
+    <div class="stat-card fade-in"><div class="stat-number">1984</div><div class="stat-label">Année de reconnaissance</div></div>
+    <div class="stat-card fade-in"><div class="stat-number">3</div><div class="stat-label">Promotions IBTADC</div></div>
+  </div>
+</section>
+<section class="eglises-section">
+  <div style="max-width:1000px;margin:0 auto;">
+    <h2 class="section-title fade-in">Nos implantations</h2>
+    <div class="eglises-grid">
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Pain de Vie</h3><p>Gobongo-Enerca, Bangui</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Du Saint-Esprit</h3><p>Bangui, Fondo</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Christ En Action</h3><p>Bangui, Sica1</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> La Restauration</h3><p>Bangui, Damala</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Cité la Gloire</h3><p>Bangui, Cité Colline</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Le Chandelier</h3><p>Bangui, Landja</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Jehova Rapha</h3><p>Bangui, Trois Casiers</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Source de Vie</h3><p>Bangui, Gobongo Marché</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Bonne Voie</h3><p>Bangui, Tournant</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Foi et Oeuvre</h3><p>Bangui, Kilometre 5</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Peniel</h3><p>Bangui, Aeroport</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Morija</h3><p>Bimbo, Ombella-M'Poko</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD de Bossongo</h3><p>Mbaïki, Lobaye</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église Centrale de Bossangoa</h3><p>Bossangoa, L'Ouham</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD Police</h3><p>Bossangoa, L'Ouham</p></div>      
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD Ngoumbelet</h3><p>Sibut, Kémo</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD de Mobaye</h3><p>Mobaye, Basse-Kotto</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD de Berberati</h3><p>Berberati, Mambéré-Kadéï</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD de Bouar</h3><p>Boua, Nana-Mambéré</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église des AD de Mabo</h3><p>Sibut, Kémo</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église La Borne</h3><p>Lakouanga, Bangui</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Église La Borne - Parole du Salut </h3><p>Sica3, Bangui</p></div>
+
+    </div>
+    <h2 class="section-title fade-in" style="margin-top:56px;">Carte des implantations</h2>
+    <div id="map" class="fade-in"></div>
+  </div>
+</section>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([5.5, 18.5], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+const icon = L.divIcon({ className: '', html: '<div style="width:14px;height:14px;background:#0f2d62;border:3px solid #ffd36b;border-radius:50%;"></div>', iconSize:[14,14] });
+const eglises = [
+  [4.3612, 18.5550, "Temple Pain de Vie", "Gobongo-Enerca, Bangui"],
+  [4.3947, 18.5582, "Église ADC Centrale", "Bangui, Centre-ville"],
+  [4.2580, 18.4120, "Église ADC Bimbo", "Bimbo, Ombella-M'Poko"],
+  [3.8640, 17.9760, "Église ADC Mbaïki", "Mbaïki, Lobaye"],
+  [4.7970, 18.1170, "Église ADC Boali", "Boali, Ombella-M'Poko"],
+  [5.7460, 19.0840, "Église ADC Sibut", "Sibut, Kémo"],
+  [5.7590, 20.6740, "Église ADC Bambari", "Bambari, Ouaka"],
+  [4.2610, 15.7860, "Église ADC Berberati", "Berberati, Mambéré-Kadéï"],
+];
+eglises.forEach(([lat, lng, nom, lieu]) => {
+  L.marker([lat, lng], {icon}).addTo(map).bindPopup(`<strong>${nom}</strong><br>${lieu}`);
+});
+</script>
+
+  <!-- FOOTER -->
+    <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Assemblées de Dieu de Centrafrique</h3>
+        <p style="display:block; text-align:justify;">Une communauté engagée dans l'annonce de l'Évangile,<br>la formation des disciples et l'implantation des Églises pentecôtistes.</p>
+        <p><i class="fa-solid fa-clock" style="color:var(--gold);margin-right:6px;"></i>Culte : Dimanche 08h30</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/maximejoseph.balla" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/23672621699" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-right:6px;"></i>Cité Jean XXIII Réf. Gobongo-Enerca, Bangui — RCA</p>
+        <p><i class="fa-solid fa-envelope" style="color:var(--gold);margin-right:6px;"></i><a href="mailto:contact@adc.cf">contact@adc.cf</a></p>
+        <p><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:6px;"></i>(+236) 72 62 16 99</p>
+        <p><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:6px;"></i>(+236) 75 71 06 07</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <a href="index.html"><i class="fa-solid fa-house" style="margin-right:6px;"></i>Accueil</a>
+        <a href="apropos.html"><i class="fa-solid fa-circle-info" style="margin-right:6px;"></i>À propos</a>
+        <a href="NosEglises.html"><i class="fa-solid fa-church" style="margin-right:6px;"></i>Nos Églises</a>
+        <a href="Bureau-National.html"><i class="fa-solid fa-users" style="margin-right:6px;"></i>Bureau National</a>
+        <a href="ibtadc.html"><i class="fa-solid fa-book" style="margin-right:6px;"></i>IBTADC</a>
+        <a href="contact.html"><i class="fa-solid fa-paper-plane" style="margin-right:6px;"></i>Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Assemblées de Dieu de Centrafrique — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="adc.js"></script>
+</body>
+</html>
