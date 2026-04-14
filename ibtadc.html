@@ -21,8 +21,104 @@
   <meta name="twitter:title" content="IBTADC — Institut Biblique et Théologique des ADC">
   <meta name="twitter:description" content="L'Institut Biblique et Théologique des Assemblées de Dieu de Centrafrique (IBTADC) forme des pasteurs, évangélistes et serviteurs de Dieu pour l'œuvre chrétienne en République Centrafricaine.">
   <meta name="twitter:image" content="https://www.ad-centrafrique.org/images/logo.png">
+<style>
+/* ===== BANNIÈRE CONSENTEMENT COOKIES ===== */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 20, 50, 0.97);
+  color: #e0e0e0;
+  padding: 18px 24px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 3px solid #c8a84b;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  animation: slideUpBanner 0.4s ease;
+}
+@keyframes slideUpBanner {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+#cookie-banner p {
+  margin: 0;
+  flex: 1;
+  min-width: 220px;
+}
+#cookie-banner a {
+  color: #c8a84b;
+  text-decoration: underline;
+}
+#cookie-banner .cookie-btns {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+#cookie-accept {
+  background: #c8a84b;
+  color: #0a1432;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.88rem;
+  transition: background 0.2s;
+}
+#cookie-accept:hover { background: #e0c060; }
+#cookie-decline {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #555;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+#cookie-decline:hover { border-color: #aaa; color: #fff; }
+</style>
 </head>
 <body>
+
+<!-- ===== BANNIÈRE CONSENTEMENT COOKIES ===== -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement cookies">
+  <p>
+    <strong>🍪 Ce site utilise des cookies</strong> pour améliorer votre expérience de navigation.
+    En continuant à naviguer sur ce site, vous acceptez notre utilisation des cookies conformément à notre
+    <a href="#" onclick="return false;">politique de confidentialité</a>.
+  </p>
+  <div class="cookie-btns">
+    <button id="cookie-accept" onclick="acceptCookies()">Accepter</button>
+    <button id="cookie-decline" onclick="declineCookies()">Refuser</button>
+  </div>
+</div>
+<script>
+  // Gestion du consentement cookies
+  (function() {
+    var consent = localStorage.getItem('adc_cookie_consent');
+    if (consent === 'accepted' || consent === 'declined') {
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.style.display = 'none';
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('adc_cookie_consent', 'accepted');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  function declineCookies() {
+    localStorage.setItem('adc_cookie_consent', 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+</script>
+
 
   <!-- BARRE DE PROGRESSION -->
   <div id="reading-bar"></div>
