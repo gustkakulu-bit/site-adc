@@ -93,11 +93,20 @@
       <p><strong>Dimanche :</strong> 08h30 — 13h00</p>
     </div>
     <div class="contact-form fade-in">
-      <input type="text" placeholder="Votre nom complet" required>
-      <input type="email" placeholder="Votre adresse email" required>
-      <input type="text" placeholder="Sujet de votre message">
-      <textarea placeholder="Votre message..."></textarea>
-      <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactSubmit(event)">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><input name="bot-field"></p>
+        <input type="text" name="nom" placeholder="Votre nom complet" required>
+        <input type="email" name="email" placeholder="Votre adresse email" required>
+        <input type="text" name="sujet" placeholder="Sujet de votre message">
+        <textarea name="message" placeholder="Votre message..."></textarea>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
+      </form>
+      <div id="contactSuccess" style="display:none; background:#e8f5e9; border-radius:10px; padding:24px; text-align:center; color:#2e7d32;">
+        <i class="fas fa-check-circle" style="font-size:2rem; margin-bottom:10px;"></i>
+        <h4>Message envoyé avec succès !</h4>
+        <p>Nous vous répondrons dans les plus brefs délais.</p>
+      </div>
     </div>
   </div>
   <div style="max-width:1000px;margin:48px auto 0;" id="map" class="fade-in"></div>
@@ -147,5 +156,27 @@ L.marker([4.3612, 18.5550]).addTo(map).bindPopup('<strong>Assemblées de Dieu de
   </footer>
 
   <script src="adc.js"></script>
+  <script>
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(() => {
+        form.style.display = 'none';
+        document.getElementById('contactSuccess').style.display = 'block';
+        setTimeout(() => {
+          form.reset();
+          form.style.display = 'block';
+          document.getElementById('contactSuccess').style.display = 'none';
+        }, 8000);
+      }).catch(() => {
+        alert('Une erreur est survenue. Veuillez réessayer.');
+      });
+    }
+  </script>
 </body>
 </html>
