@@ -110,6 +110,12 @@
         <input type="email" name="email" placeholder="Votre adresse email" required>
         <input type="text" name="sujet" placeholder="Sujet de votre message">
         <textarea name="message" placeholder="Votre message..."></textarea>
+        <div class="rgpd-consent">
+          <label class="rgpd-label">
+            <input type="checkbox" id="consentContact" required>
+            <span>J'accepte que les Assemblées de Dieu de Centrafrique collectent et traitent mes données personnelles (nom, email, message) dans le seul but de répondre à ma demande de contact. Ces données ne seront ni vendues ni transmises à des tiers. <a href="#" onclick="return false;" style="color:#c8a84b;">En savoir plus</a>.</span>
+          </label>
+        </div>
         <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer le message</button>
       </form>
       <div id="contactSuccess" style="display:none; background:#e8f5e9; border-radius:10px; padding:24px; text-align:center; color:#2e7d32;">
