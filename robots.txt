@@ -1,0 +1,8 @@
+# Robots.txt — Assemblées de Dieu de Centrafrique
+# https://www.ad-centrafrique.org
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ad-centrafrique.org/sitemap.xml
