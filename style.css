@@ -1258,3 +1258,64 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
     font-size: 1rem;
   }
 }
+
+
+/* ===== BADGE RECONNAISSANCE SAFT (IBTADC) ===== */
+.saft-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: linear-gradient(135deg, #0a1432 0%, #1a2a5e 100%);
+  border: 2px solid #c8a84b;
+  border-left: 6px solid #c8a84b;
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 36px 0;
+  box-shadow: 0 6px 24px rgba(200, 168, 75, 0.18);
+}
+.saft-badge-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: #c8a84b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #0a1432;
+  box-shadow: 0 4px 12px rgba(200, 168, 75, 0.4);
+}
+.saft-badge-content h3 {
+  color: #c8a84b;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.02em;
+}
+.saft-badge-content p {
+  color: #d0d8e8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+}
+.saft-badge-content strong { color: #fff; }
+.saft-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #c8a84b;
+  color: #0a1432;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.saft-link:hover { background: #e0c060; transform: translateY(-2px); }
+.saft-link i { font-size: 0.8rem; }
+@media (max-width: 600px) {
+  .saft-badge { flex-direction: column; padding: 20px; }
+  .saft-badge-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+}
