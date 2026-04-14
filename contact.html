@@ -93,9 +93,11 @@
       <p><strong>Dimanche :</strong> 08h30 — 13h00</p>
     </div>
     <div class="contact-form fade-in">
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactSubmit(event)">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none;"><input name="bot-field"></p>
+      <form action="https://api.web3forms.com/submit" method="POST" onsubmit="handleContactSubmit(event)">
+        <input type="hidden" name="access_key" value="2f29a521-8d55-4ece-971e-5952316caf45">
+        <input type="hidden" name="subject" value="Nouveau message de contact — ADC">
+        <input type="hidden" name="from_name" value="Site ADC Centrafrique">
+        <input type="checkbox" name="botcheck" style="display:none;">
         <input type="text" name="nom" placeholder="Votre nom complet" required>
         <input type="email" name="email" placeholder="Votre adresse email" required>
         <input type="text" name="sujet" placeholder="Sujet de votre message">
@@ -161,18 +163,21 @@ L.marker([4.3612, 18.5550]).addTo(map).bindPopup('<strong>Assemblées de Dieu de
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
-      fetch('/', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      }).then(() => {
-        form.style.display = 'none';
-        document.getElementById('contactSuccess').style.display = 'block';
-        setTimeout(() => {
-          form.reset();
-          form.style.display = 'block';
-          document.getElementById('contactSuccess').style.display = 'none';
-        }, 8000);
+        body: data
+      }).then(res => res.json()).then(data => {
+        if (data.success) {
+          form.style.display = 'none';
+          document.getElementById('contactSuccess').style.display = 'block';
+          setTimeout(() => {
+            form.reset();
+            form.style.display = 'block';
+            document.getElementById('contactSuccess').style.display = 'none';
+          }, 8000);
+        } else {
+          alert('Une erreur est survenue : ' + data.message);
+        }
       }).catch(() => {
         alert('Une erreur est survenue. Veuillez réessayer.');
       });

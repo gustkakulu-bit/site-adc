@@ -157,9 +157,11 @@
           <h3><i class="fa-solid fa-star"></i> Formulaire de Souscription — Partenaire de la Mission</h3>
           <p>Rejoignez le réseau des Partenaires de la Mission (PM) et participez activement à l'œuvre missionnaire des ADC en République Centrafricaine.</p>
         </div>
-        <form class="pm-form" id="pmForm" name="partenaire-mission" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitPMForm(event)">          
-          <input type="hidden" name="form-name" value="partenaire-mission">
-          <p style="display:none;"><input name="bot-field"></p>
+        <form class="pm-form" id="pmForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitPMForm(event)">
+          <input type="hidden" name="access_key" value="2f29a521-8d55-4ece-971e-5952316caf45">
+          <input type="hidden" name="subject" value="Nouvelle souscription Partenaire de la Mission — ADC">
+          <input type="hidden" name="from_name" value="Site ADC Centrafrique">
+          <input type="checkbox" name="botcheck" style="display:none;">
           <div class="pm-form-row">
             <div class="pm-form-group">
               <label for="pm-nom"><i class="fa-solid fa-user"></i> Nom complet *</label>
@@ -315,18 +317,21 @@
       const form = document.getElementById('pmForm');
       const success = document.getElementById('pmSuccess');
       const data = new FormData(form);
-      fetch('/', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      }).then(() => {
-        form.style.display = 'none';
-        success.style.display = 'block';
-        setTimeout(() => {
-          form.reset();
-          form.style.display = 'flex';
-          success.style.display = 'none';
-        }, 8000);
+        body: data
+      }).then(res => res.json()).then(result => {
+        if (result.success) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+          setTimeout(() => {
+            form.reset();
+            form.style.display = 'flex';
+            success.style.display = 'none';
+          }, 8000);
+        } else {
+          alert('Une erreur est survenue : ' + result.message);
+        }
       }).catch(() => {
         alert('Une erreur est survenue. Veuillez réessayer.');
       });
