@@ -1380,3 +1380,101 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
 @media (max-width: 600px) {
   .partenaires-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== SECTION HISTORIQUE FONDATEUR IBTADC ===== */
+.fondateur-section {
+  margin: 40px 0;
+}
+.fondateur-section h2 {
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  font-family: var(--font-title);
+}
+.fondateur-section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+.fondateur-card {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--gold);
+  border-radius: 14px;
+  padding: 28px;
+}
+.fondateur-photo-wrap {
+  flex-shrink: 0;
+  text-align: center;
+  width: 180px;
+}
+.fondateur-photo {
+  width: 170px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  border: 3px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  background: #fff;
+}
+.fondateur-photo-caption {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  font-style: italic;
+  line-height: 1.4;
+  font-family: var(--font-title);
+}
+.fondateur-bio h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-family: var(--font-title);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+[data-theme="dark"] .fondateur-bio h3 { color: var(--gold); }
+.fondateur-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(200,168,75,0.18);
+  color: #a07820;
+  border: 1px solid rgba(200,168,75,0.4);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-style: italic;
+  font-family: var(--font-body);
+}
+[data-theme="dark"] .fondateur-badge { color: var(--gold); background: rgba(200,168,75,0.1); }
+.fondateur-titre {
+  font-size: 0.82rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 14px !important;
+  opacity: 0.85;
+}
+.fondateur-bio p {
+  font-size: 0.93rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+@media (max-width: 700px) {
+  .fondateur-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .fondateur-photo-wrap { width: 100%; }
+  .fondateur-photo { width: 140px; height: 165px; }
+}
