@@ -99,12 +99,12 @@ h1,h2,h3,h4 { font-family: var(--font-title); line-height: 1.35; letter-spacing:
 .logo-zone { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
 .logo { width: 56px; height: 56px; object-fit: contain; transition: width var(--transition), height var(--transition); }
 .header.shrink .logo { width: 44px; height: 44px; }
-.logo-zone h1 { color: var(--gold); font-size: 1.1rem; font-weight: 700; line-height: 1.2; font-family: var(--font-title); letter-spacing: 0.02em; }
-nav { display: flex; align-items: center; gap: 2px; }
+.logo-zone h1 { color: var(--gold); font-size: 0.95rem; font-weight: 700; line-height: 1.2; font-family: var(--font-title); letter-spacing: 0.02em; max-width: 200px; }
+nav { display: flex; align-items: center; gap: 1px; }
 nav a {
-  color: rgba(255,255,255,0.9); font-size: 0.75rem; font-weight: 600;
-  padding: 6px 10px; border-radius: 2px; white-space: nowrap;
-  letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9); font-size: 0.68rem; font-weight: 600;
+  padding: 5px 7px; border-radius: 2px; white-space: nowrap;
+  letter-spacing: 0.05em; text-transform: uppercase;
   transition: background var(--transition), color var(--transition);
   font-family: var(--font-title);
 }
