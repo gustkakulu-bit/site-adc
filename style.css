@@ -54,12 +54,12 @@ body {
   background: var(--white);
   line-height: 1.8;
   overflow-x: hidden;
-  animation: pageIn 0.45s ease both;
+  animation: pageIn 0.18s ease both;
   transition: background var(--transition), color var(--transition);
 }
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 img { max-width: 100%; display: block; }
 a   { text-decoration: none; color: inherit; }
@@ -1479,19 +1479,8 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   .fondateur-photo { width: 140px; height: 165px; }
 }
 
-/* ===== TRANSITION DOUCE ENTRE PAGES ===== */
-body {
-  animation: pageFadeIn 0.25s ease both;
-}
+/* ===== FONDU D'ENTREE PAGE ===== */
 @keyframes pageFadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-body.page-leaving {
-  animation: pageFadeOut 0.15s ease forwards;
-  pointer-events: none;
-}
-@keyframes pageFadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; }
 }
