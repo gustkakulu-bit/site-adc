@@ -646,6 +646,9 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
 .promo-card-body { background: var(--white); padding: 18px; }
 .promo-card-body h4 { font-size: 0.9rem; color: var(--primary); font-family: var(--font-title); }
 .promo-card-body p { font-size: 0.82rem; color: var(--text-light); margin: 6px 0 0; }
+.promo-card-info { background: var(--white); padding: 16px 18px; text-align: center; }
+.promo-card-info h3 { font-size: 1rem; color: var(--primary); font-family: var(--font-title); font-weight: 700; margin-bottom: 6px; }
+.promo-card-info p { font-size: 0.82rem; color: var(--text-light); margin: 0; text-align: center; }
 
 /* ── PAGE CONTACT ───────────────────────────────────────────── */
 .contact-section { padding: 56px 24px; }
