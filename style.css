@@ -64,7 +64,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a   { text-decoration: none; color: inherit; }
-p   { text-align: justify; margin-bottom: 1.2rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.9; }
+p   { text-align: left; margin-bottom: 1.2rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.9; }
 h1,h2,h3,h4 { font-family: var(--font-title); line-height: 1.35; letter-spacing: 0.01em; }
 
 /* ── BARRE DE PROGRESSION ───────────────────────────────────── */
@@ -562,7 +562,7 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
 .verite-item[open] summary::after { content: '\2212'; }
 .verite-item[open] { border-color: var(--gold); }
 .verite-item[open] summary { color: var(--primary-dark); border-bottom: 1px solid var(--border); }
-.verite-item p { padding: 14px 18px 16px; font-size: 0.85rem; color: var(--text); line-height: 1.7; margin: 0; text-align: justify; }
+.verite-item p { padding: 14px 18px 16px; font-size: 0.85rem; color: var(--text); line-height: 1.7; margin: 0; text-align: left; }
 .verite-num {
   min-width: 26px; height: 26px; border-radius: 50%;
   background: var(--primary); color: #fff;
@@ -927,7 +927,7 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 36px;
-  text-align: justify;
+  text-align: left;
   border-left: 4px solid var(--gold);
   padding-left: 16px;
 }
@@ -1099,7 +1099,7 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   color: rgba(255,255,255,0.85);
   font-size: 0.95rem;
   line-height: 1.6;
-  text-align: justify;
+  text-align: left;
 }
 
 /* Formulaire */
