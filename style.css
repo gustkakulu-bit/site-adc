@@ -514,7 +514,7 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   border-top: none; transition: transform var(--transition), box-shadow var(--transition);
 }
 .membre-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.membre-card img { width: 100%; height: 220px; object-fit: cover; object-position: top center; border-radius: 0; border: none; border-bottom: 4px solid var(--gold); margin: 0 0 16px 0; display: block; }
+.membre-card img { width: 100%; height: 220px; object-fit: cover; object-position: center 20%; border-radius: 0; border: none; border-bottom: 4px solid var(--gold); margin: 0 0 16px 0; display: block; }
 .membre-card h3 { font-size: 0.88rem; color: var(--primary); font-weight: 700; margin-bottom: 4px; font-family: var(--font-title); padding: 0 14px; text-align: center; }
 .membre-card .role { font-size: 0.78rem; color: var(--text-light); padding: 0 14px; text-align: center; }
 
@@ -750,7 +750,7 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   /* Bureau National */
   .membres-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .membre-card { padding: 12px 8px; }
-  .membre-card img { height: 120px; }
+  .membre-card img { height: 180px; object-position: center 20%; }
   .membre-card h3 { font-size: 0.8rem; }
   .membre-card p { font-size: 0.72rem; }
   .president-card { padding: 20px 14px; grid-template-columns: 1fr; text-align: center; }
