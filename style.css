@@ -1478,3 +1478,19 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
   .fondateur-photo-wrap { width: 100%; }
   .fondateur-photo { width: 140px; height: 165px; }
 }
+
+/* ===== TRANSITION DOUCE ENTRE PAGES ===== */
+body {
+  animation: pageFadeIn 0.45s ease both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body.page-leaving {
+  animation: pageFadeOut 0.3s ease forwards;
+}
+@keyframes pageFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-8px); }
+}
