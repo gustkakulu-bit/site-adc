@@ -64,7 +64,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a   { text-decoration: none; color: inherit; }
-p   { text-align: left; margin-bottom: 1.2rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.9; }
+p   { text-align: justify; hyphens: auto; word-break: break-word; margin-bottom: 1.2rem; font-family: var(--font-body); font-size: 1rem; line-height: 1.9; }
 h1,h2,h3,h4 { font-family: var(--font-title); line-height: 1.35; letter-spacing: 0.01em; }
 
 /* ── BARRE DE PROGRESSION ───────────────────────────────────── */
