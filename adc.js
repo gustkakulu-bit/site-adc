@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') lbGo(1);
   });
 
-  /* Activer lightbox sur toutes les images cliquables */
+  /* Activer lightbox sur toutes les images cliquables (.galerie-item, etc.) */
   const galItems = document.querySelectorAll('.galerie-item, .actu-photos-grid img, .promo-card img');
   const galSrcs  = [];
   galItems.forEach((item, i) => {
@@ -210,6 +210,14 @@ document.addEventListener('DOMContentLoaded', () => {
       item.addEventListener('click', () => openLightbox(galSrcs, i));
       item.style.cursor = 'pointer';
     }
+  });
+
+  /* Activer lightbox sur les images avec attribut data-lightbox (galerie principale) */
+  const lbDirectImgs = document.querySelectorAll('img[data-lightbox]');
+  const lbDirectSrcs = Array.from(lbDirectImgs).map(img => img.src);
+  lbDirectImgs.forEach((img, i) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', () => openLightbox(lbDirectSrcs, i));
   });
 
   /* ── BOUTON RETOUR EN HAUT ──────────────────────────────── */
