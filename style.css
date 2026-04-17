@@ -407,6 +407,8 @@ nav a:hover, nav a.active { background: var(--gold); color: var(--primary); font
 .footer-bottom p { text-align: center !important; margin: 0; }
 
 /* ── LIGHTBOX ───────────────────────────────────────────────── */
+html.lb-open,
+body.lb-open { overflow: hidden !important; }
 #lightbox {
   display: none; position: fixed; inset: 0; z-index: 9000;
   background: rgba(0,0,0,0.92); align-items: center; justify-content: center;

@@ -178,11 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
     lbItems = items; lbIndex = idx;
     if (lbImg) lbImg.src = lbItems[lbIndex];
     lightbox?.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('lb-open');
+    document.body.classList.add('lb-open');
   }
   function closeLightbox() {
     lightbox?.classList.remove('open');
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove('lb-open');
+    document.body.classList.remove('lb-open');
   }
   function lbGo(dir) {
     lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
