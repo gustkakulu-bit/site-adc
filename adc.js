@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') lbGo(1);
   });
 
-  /* Activer lightbox sur toutes les images cliquables (.galerie-item, etc.) */
+  /* ── Lightbox : galerie principale (.galerie-item) et autres ── */
   const galItems = document.querySelectorAll('.galerie-item, .actu-photos-grid img, .promo-card img');
   const galSrcs  = [];
   galItems.forEach((item, i) => {
@@ -212,8 +212,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* Activer lightbox sur les images avec attribut data-lightbox (galerie principale) */
-  const lbDirectImgs = document.querySelectorAll('img[data-lightbox]');
+  /* ── Lightbox : galeries de départements (.dept-gallery-item) ── */
+  /* Regrouper par grille parente pour navigation cohérente dans chaque section */
+  document.querySelectorAll('.dept-gallery-grid').forEach(grid => {
+    const items = grid.querySelectorAll('.dept-gallery-item');
+    const srcs  = [];
+    items.forEach(item => {
+      const img = item.querySelector('img');
+      if (img) srcs.push(img.src || img.dataset.src || '');
+    });
+    items.forEach((item, i) => {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', () => openLightbox(srcs, i));
+    });
+  });
+
+  /* ── Lightbox : images isolées avec data-lightbox (hors dept-gallery-grid) ── */
+  const lbDirectImgs = document.querySelectorAll('img[data-lightbox]:not(.dept-gallery-img)');
   const lbDirectSrcs = Array.from(lbDirectImgs).map(img => img.src);
   lbDirectImgs.forEach((img, i) => {
     img.style.cursor = 'pointer';
