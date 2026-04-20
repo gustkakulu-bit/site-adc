@@ -84,6 +84,27 @@
   transition: border-color 0.2s, color 0.2s;
 }
 #cookie-decline:hover { border-color: #aaa; color: #fff; }
+
+/* Lien Facebook dans les cartes d'église */
+.eglise-fb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: #1877f2;
+  color: #fff !important;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.eglise-fb-link:hover {
+  background: #1558b0;
+  transform: translateY(-1px);
+  color: #fff !important;
+}
 </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5NCX7YQ1T"></script>
@@ -205,9 +226,9 @@
   <div style="max-width:1000px;margin:0 auto;">
     <h2 class="section-title fade-in">Nos implantations</h2>
     <div class="eglises-grid">
-      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Pain de Vie</h3><p>Gobongo-Enerca, Bangui</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Pain de Vie</h3><p>Gobongo-Enerca, Bangui</p><a href="https://www.facebook.com/share/1Dp3SS7WQH/" target="_blank" rel="noopener" class="eglise-fb-link"><i class="fa-brands fa-facebook-f"></i> Page Facebook</a></div>
       <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Du Saint-Esprit</h3><p>Bangui, Fondo</p></div>
-      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Christ En Action</h3><p>Bangui, Sica I Derrière ENAM</p></div>
+      <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Temple Christ En Action</h3><p>Bangui, Sica I Derrière ENAM</p><a href="https://www.facebook.com/share/1CNbpRKfoS/" target="_blank" rel="noopener" class="eglise-fb-link"><i class="fa-brands fa-facebook-f"></i> Page Facebook</a></div>
       <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> La Restauration</h3><p>Bangui, Galabadja 5 croisement WANDE</p></div>
       <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Cité la Gloire</h3><p>Bangui, Cité Colline</p></div>
       <div class="eglise-card fade-in"><h3><i class="fas fa-church"></i> Le Chandelier</h3><p>Bangui, Landja</p></div>
@@ -240,17 +261,18 @@ const map = L.map('map').setView([5.5, 18.5], 5);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
 const icon = L.divIcon({ className: '', html: '<div style="width:14px;height:14px;background:#0f2d62;border:3px solid #ffd36b;border-radius:50%;"></div>', iconSize:[14,14] });
 const eglises = [
-  [4.3612, 18.5550, "Temple Pain de Vie", "Gobongo-Enerca, Bangui"],
-  [4.3947, 18.5582, "Église ADC Centrale", "Bangui, Centre-ville"],
-  [4.2580, 18.4120, "Église ADC Bimbo", "Bimbo, Ombella-M'Poko"],
-  [3.8640, 17.9760, "Église ADC Mbaïki", "Mbaïki, Lobaye"],
-  [4.7970, 18.1170, "Église ADC Boali", "Boali, Ombella-M'Poko"],
-  [5.7460, 19.0840, "Église ADC Sibut", "Sibut, Kémo"],
-  [5.7590, 20.6740, "Église ADC Bambari", "Bambari, Ouaka"],
-  [4.2610, 15.7860, "Église ADC Berberati", "Berberati, Mambéré-Kadéï"],
+  [4.3612, 18.5550, "Temple Pain de Vie", "Gobongo-Enerca, Bangui", "https://www.facebook.com/share/1Dp3SS7WQH/"],
+  [4.3947, 18.5582, "Église ADC Centrale", "Bangui, Centre-ville", null],
+  [4.2580, 18.4120, "Église ADC Bimbo", "Bimbo, Ombella-M'Poko", null],
+  [3.8640, 17.9760, "Église ADC Mbaïki", "Mbaïki, Lobaye", null],
+  [4.7970, 18.1170, "Église ADC Boali", "Boali, Ombella-M'Poko", null],
+  [5.7460, 19.0840, "Église ADC Sibut", "Sibut, Kémo", null],
+  [5.7590, 20.6740, "Église ADC Bambari", "Bambari, Ouaka", null],
+  [4.2610, 15.7860, "Église ADC Berberati", "Berberati, Mambéré-Kadéï", null],
 ];
-eglises.forEach(([lat, lng, nom, lieu]) => {
-  L.marker([lat, lng], {icon}).addTo(map).bindPopup(`<strong>${nom}</strong><br>${lieu}`);
+eglises.forEach(([lat, lng, nom, lieu, fb]) => {
+  const fbLink = fb ? `<br><a href="${fb}" target="_blank" rel="noopener" style="color:#1877f2;font-weight:600;text-decoration:none;"><i class="fa-brands fa-facebook-f"></i> Page Facebook</a>` : '';
+  L.marker([lat, lng], {icon}).addTo(map).bindPopup(`<strong>${nom}</strong><br>${lieu}${fbLink}`);
 });
 </script>
 
